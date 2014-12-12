@@ -1,0 +1,21 @@
+
+
+<div ng-repeat="movie in movies.movies" >
+<div class="panel panel-info" >
+    <div class="panel-heading"> <a  ng-href="{{ '#movie/' + getId(movie.links.self) }}">{{movie.title}} </a> </div>
+    <div class="panel-body">
+        <img  ng-src="{{movie.posters.thumbnail}}"  class="poster  col-md-2">
+    <div class="col-md-10">
+        <div class="row">&nbsp;<strong>Year:</strong> {{movie.year}}</div>
+        <div class="row" >&nbsp;<strong>Cast:</strong>  <span ng-repeat="cast in movie.abridged_cast">{{cast.name}} <span ng-if="!$last">,</span> <span ng-if="$last">.</span> </span> </div>
+        <div class="row" ng-if="movie.synopsis" >&nbsp;<strong>Synopsis:</strong> <p  class="col-md-12" >{{movie.synopsis}}</p> </div>
+
+    </div>
+
+    </div>
+
+    <div class="panel-footer "><a href="{{ '#movie/' + getId(movie.links.self) }}" class="btn btn-info see-info col-md-2 col-md-offset-10">See full info </a> </div>
+</div>
+
+</div>
+

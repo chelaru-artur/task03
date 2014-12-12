@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>task03</title>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+
+
+    <!-- default themes and core styles -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- Your custom JavaScript code -->
+    <script src="js/app.js"></script>
+</head>
+
+
+<body ng-controller="MainController as MainCtrl">
+
+<div class="container">
+    <nav role="navigation " class="navbar navbar-default navbar-fixed-top">
+
+
+
+        <div class="collapse navbar-collapse">
+
+            <ul class="nav navbar-nav">
+
+                <li>
+                    <form class="navbar-form">
+                        <input class="form-control " placeholder="Search movie" ng-model="query">
+                        <a class="nav btn  btn-default" href="#search/{{query}}" role="button">Search</a>
+
+                    </form>
+                </li>
+                <li>
+
+                </li>
+
+                <li>
+                    <form class="navbar-form">
+                        <select class="form-control" ng-model="list">
+                            <option value="box-office">Box office</option>
+                            <option value="in_theaters">In theaters</option>
+                            <option value="opening">Opening</option>
+                            <option value="upcoming">Upcoming</option>
+                        </select>
+                        <a class=" btn btn-info" ng-href="#list/{{list}}" role="button">Open list</a>
+                    </form>
+                </li>
+                <li> </li>
+            </ul>
+
+
+        </div>
+        <!-- /.navbar-collapse -->
+
+
+
+    </nav>
+    <div ng-view></div>
+
+</div>
+
+
+</body>
+
+</html>

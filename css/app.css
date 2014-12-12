@@ -1,0 +1,38 @@
+
+.container {
+    padding-top : 70px;
+}
+
+.panel-body{
+    padding :5px;
+}
+
+.poster {
+    border-right: 1px solid #000000;
+}
+
+.horizontal-list li{
+display: inline;
+list-style-type: none;
+padding-right: 2px;
+}
+
+.panel-footer > .col-md-2{
+    float: none;
+}
+
+.movie-description{
+    padding-left: 20px;
+}
+
+.similar_movies  img{
+    padding: 0 !important;
+    height: 220px;
+}
+
+
+
+.similar_movies > .thumbnail:hover{
+    border: 1px solid rgba(0,0,0,0.5);
+    transform: scaleY(1.1);
+}

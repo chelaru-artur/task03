@@ -1,0 +1,67 @@
+<div class="row">
+    <!-- movie post -->
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title text-center">{{movie.title}} </h3>
+        </div>
+
+        <div class="panel-body">
+            <div class="row">
+                <img class="img-responsive  col-md-3 poster" ng-src="{{movie.posters.original}}">
+
+
+
+                <div class="col-md-9 movie-description">
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="row ">
+                                <label>Release:</label> {{movie.release_dates.theater}} </div>
+                            <div class="row ">
+                                <label>Directors:</label> <span ng-repeat="director in movie.abridged_directors">{{director.name}} <span ng-if="!$last">,</span></span>
+                            </div>
+                            <div class="row">
+                                <label>Genres:</label> <span ng-repeat="genre in movie.genres">{{genre}} <span ng-if="!$last">,</span></span>
+                            </div>
+                            <div class="row ">
+                                <label>MPAA rating:</label> {{movie.mpaa_rating}} </div>
+                            <div class="row ">
+                                <label>Studio:</label> {{movie.studio}}</div>
+
+                            <div class="row " ng-if="movie.synopsis">
+                                <label>Synopsis:</label>
+                                <p>{{movie.synopsis}}</p>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="row">
+                            <span class="label label-default">Cast: </span>
+                            <ul style="font-size:12px;" class=" list-unstyled">
+                                <li ng-repeat="cast in movie.abridged_cast"> {{cast.name}} </li>
+                            </ul>`
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <!-- Similar movies-->
+            <div class="row similar_movies horizontal-list">
+                <h3 class="text-center ">Similar movies</h3>
+
+                <div class="col-md-2 thumbnail" ng-class="($first) ? 'col-md-offset-1' : '' " ng-repeat="movie in similar.movies">
+                    <img ng-src="{{movie.posters.original}}" class="img-responsive col-md-12 " title="{{movie.title}}">
+                    <a ng-href="{{ '#movie/' + getId(movie.links.self) }}" title="{{movie.title}}" class="btn btn-info col-md-12  ">Info</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
