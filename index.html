@@ -7,27 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>task03</title>
 
-
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-route/angular-route.min.js"></script>
 
-
-
-
-    <!-- default themes and core styles -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/app.css">
-    <!-- Your custom JavaScript code -->
-    <script src="js/app.js"></script>
-</head>
+    <!-- Custom JavaScript code -->
+    <script src="dist/app.js"></script>
 
+</head>
 
 <body ng-controller="MainController as MainCtrl">
 
 <div class="container">
     <nav role="navigation " class="navbar navbar-default navbar-fixed-top">
-
-
 
         <div class="collapse navbar-collapse">
 
@@ -47,7 +40,7 @@
                 <li>
                     <form class="navbar-form">
                         <select class="form-control" ng-model="list">
-                            <option value="box-office">Box office</option>
+                            <option value="box_office">Box office</option>
                             <option value="in_theaters">In theaters</option>
                             <option value="opening">Opening</option>
                             <option value="upcoming">Upcoming</option>
@@ -58,17 +51,12 @@
                 <li> </li>
             </ul>
 
-
         </div>
         <!-- /.navbar-collapse -->
-
-
-
     </nav>
     <div ng-view></div>
 
 </div>
-
 
 </body>
 

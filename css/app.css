@@ -30,8 +30,6 @@ padding-right: 2px;
     height: 220px;
 }
 
-
-
 .similar_movies > .thumbnail:hover{
     border: 1px solid rgba(0,0,0,0.5);
     transform: scaleY(1.1);
