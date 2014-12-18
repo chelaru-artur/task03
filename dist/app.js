@@ -31,7 +31,7 @@ angular.module('appControllers').controller('MainController',  ["apiService", "$
 }]);
 
 angular.module('appControllers').controller('MovieSearchCtrl',  ["$scope", "$routeParams", "apiService", function($scope, $routeParams, apiService) {
-
+    $scope.movies = [];
     apiService.searchMovies($routeParams.q, 30, 1).success(function(data) {
         console.log(data);
         $scope.movies = data;
@@ -114,9 +114,13 @@ angular.module('appServices').service('apiService', ["$http", "JSON_CALLBACK", "
         var callback = {
             'callback': JSON_CALLBACK
         };
+        var par = angular.extend(key,params,callback);
+        console.log(par);
+
         return $http.jsonp(url, {
             params: angular.extend(key,params,callback)
         });
+
     };
 
 }]);
